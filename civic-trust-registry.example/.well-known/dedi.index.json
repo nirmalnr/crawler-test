@@ -17,17 +17,17 @@
     {
       "registry": "membership",
       "url": "https://nirmalnr.github.io/crawler-test/civic-trust-registry.example/dedi/dedi.membership.json",
-      "digest": "sha-256:8c8b32abf3e03cda63058837a23d003cce421a656cb087eae39a02f77f363d03"
+      "digest": "sha-256:b2fdce63ce8efe8113872acb3ba378dfe745d75fc09a16bb8d2f78503d1d41ac"
     },
     {
       "registry": "revoke",
       "url": "https://nirmalnr.github.io/crawler-test/civic-trust-registry.example/dedi/dedi.revoke.json",
-      "digest": "sha-256:51c65b92b7594d08a3c874541f90808ed85459d56fd0634bb3fd2ace429161bd"
+      "digest": "sha-256:cfd24c3bd64d21b14c89ac847da836c15a9aa9cdcc25fde6bb23a0efa407e4b1"
     }
   ],
   "proof": {
     "verification_method": "civic-trust-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..v2uMzJYRKkpWzEoboggFzYf7tY0lFDOMFYY2sIgwTj-QNN6icmG3jRLCQVryL2NFegpu-rjrP6eX5QXy-RQMAg"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..UGycPhEFwGXiWqLTv-U5sDjN00UA7uIP3LNo1BqyPbzxyo8FL4lDc3lKh4OIeWbvcdBFl7VjtgpI-nuWgbKXBQ"
   }
 }

@@ -17,12 +17,12 @@
     {
       "registry": "public_key",
       "url": "https://nirmalnr.github.io/crawler-test/keychain-authority.example/dedi/dedi.public_key.json",
-      "digest": "sha-256:11dbd20f0ccde523ad7ea98268631fcb8ead331d7e6a33cc2b4c4d9a82af06b1"
+      "digest": "sha-256:e19b4b2b91652daee26e4c50d432cd6be36b6153ed1845bce9eddf5af17d560e"
     }
   ],
   "proof": {
     "verification_method": "keychain-authority-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..GOWslGmNdGHuz7RewSj_mgnp7vVddcT7l-u5sgshZgC9or7j_5--4b-WJuTDQadCeQFt9HtXB2U6miWc5a6sBQ"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..T21UxanrbHwvKcEQHrH4mmUdEk9Vuj_vfBJudbzVmxQ3f6j5cgGNJuibqehFHg2o_5qMp2Ibe-XXdrmAo68VAg"
   }
 }

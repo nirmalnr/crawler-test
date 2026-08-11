@@ -17,17 +17,17 @@
     {
       "registry": "beckn_subscriber",
       "url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber.json",
-      "digest": "sha-256:7e0c676163706d0d6ca2c2371020acf16914600b80a4138ef16e3361daa11a59"
+      "digest": "sha-256:a38b6bfcc82df2971a43f4d5a8b8e3eb9faa4009e88c503f6d85f777b327b7e6"
     },
     {
       "registry": "beckn_subscriber_reference",
       "url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber_reference.json",
-      "digest": "sha-256:2796521b8b1912f7e9c0965fe76da908d7d520141bdbd5173ee1f17e49793542"
+      "digest": "sha-256:2d3d5504b2dceb9ae73d00e9517834704b7ea4d8c14ef4496d599400d12f5c79"
     }
   ],
   "proof": {
     "verification_method": "beckn-mobility-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..9bA9iP8K_NrBchQGqSi4pCeL4dGxG9mByb8QSo48Z2kypmoWm7EzGMFEYt8CRM_XRIEZhdevTgkm7ddUAIrYAA"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..45zLlrRv_EoB-NUBwdNnLJ1vtWk2-H1UWsmo8kaoBPQLOhr38t2-10KbIip4M-rLNRV1xUSW24zH7ZBHp0I2BA"
   }
 }

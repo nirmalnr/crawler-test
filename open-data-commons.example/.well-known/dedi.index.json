@@ -17,17 +17,17 @@
     {
       "registry": "public-data-set",
       "url": "https://nirmalnr.github.io/crawler-test/open-data-commons.example/dedi/dedi.public-data-set.json",
-      "digest": "sha-256:f6abf04bab24f5bc19215f3797ca051f6735b155aebb054ea436ce732407462e"
+      "digest": "sha-256:7d0e607537d95cce882f473c18602618e700ea8c9ed28a6610726e7d6df85ccf"
     },
     {
       "registry": "public-rule-set",
       "url": "https://nirmalnr.github.io/crawler-test/open-data-commons.example/dedi/dedi.public-rule-set.json",
-      "digest": "sha-256:0962f04d3f9b37bf4db261dbd355d533d3bd033118af815a7ff742363ab69719"
+      "digest": "sha-256:0f0cf9f00e09104b139d1a67fac1d375ebc681e7c4065deda09550612ef44501"
     }
   ],
   "proof": {
     "verification_method": "open-data-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..4h3V3SOpXqdVLmvzUfnuq_jiJ57UASHQjJf9Ox6vCKBAqWnDpqLXwjECMPUwCiDFw59Dbmrz9Mpo02feDTgMAA"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..WxDaX1OJWLcWYt0jadoUhJ2lgAljJl4IvFdBu1AZW1xIuykFIEEm4YfbmeQ0vACHMajIZEZ7dRj_90qVA0OiDg"
   }
 }

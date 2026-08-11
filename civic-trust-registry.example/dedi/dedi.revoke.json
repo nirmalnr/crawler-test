@@ -15,26 +15,7 @@
   "namespace": "civic-trust-registry.example",
   "registry": {
     "name": "revoke",
-    "schema": {
-      "$id": "https://dedi.global/revoke.json",
-      "$schema": "http://json-schema.org/draft-07/schema#",
-      "title": "Revoke or Negative List",
-      "description": "Revocation List. This schema is used to represent anything which is revoked/blacklisted aka, negative list. Examples are blacklisted entities in a country, no-fly list, list of credentials revoked from the issuance in an university",
-      "type": "object",
-      "properties": {
-        "revoked_id": {
-          "type": "string",
-          "description": "Unique ID which is getting revoked"
-        },
-        "reason": {
-          "description": "Reason for revocation / blacklisting",
-          "type": "string"
-        }
-      },
-      "required": [
-        "revoked_id"
-      ]
-    },
+    "schema": "https://raw.githubusercontent.com/LF-Decentralized-Trust-labs/decentralized-directory-protocol/main/schemas/Revoke.json",
     "state": "live",
     "updated_at": "2026-08-11T00:00:00Z"
   },
@@ -57,6 +38,6 @@
   "proof": {
     "verification_method": "civic-trust-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..fOIsehV19K0TmIgTzr4KmeOt2YpROxSc2LHVITkvljsDwWJlkdDDA0t4MuUBlIrTyo_xb66JKMHypUT2UZ6DBQ"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..CShWC-OCNGg27323fb5-INpG9jrSlIcqrGaH-0J6qeSVTV89GLsroLWWQPr6NtfK_htjg6RkTSYSLJ-Ze8qIAw"
   }
 }

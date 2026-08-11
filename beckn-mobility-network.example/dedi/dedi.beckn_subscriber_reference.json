@@ -15,37 +15,7 @@
   "namespace": "beckn-mobility-network.example",
   "registry": {
     "name": "beckn_subscriber_reference",
-    "schema": {
-      "$schema": "http://json-schema.org/draft-07/schema#",
-      "title": "Beckn Subscriber Reference",
-      "description": "A registry entry describing reference to subscription details (either whole registries or single records) created by NFOs.",
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "subscriber_id": {
-          "type": "string",
-          "description": "Globally unique identifier of the platform, typically an FQDN."
-        },
-        "url": {
-          "type": "string",
-          "format": "uri",
-          "description": "Specifies the DeDi lookup URL pointing to another record/registry created using the schema beckn-subscriber."
-        },
-        "type": {
-          "type": "string",
-          "description": "Whether the entry is referencing a Record or a Registry.",
-          "enum": [
-            "Registry",
-            "Record"
-          ]
-        }
-      },
-      "required": [
-        "subscriber_id",
-        "url",
-        "type"
-      ]
-    },
+    "schema": "https://raw.githubusercontent.com/LF-Decentralized-Trust-labs/decentralized-directory-protocol/main/schemas/beckn_subscriber_reference.json",
     "state": "live",
     "updated_at": "2026-08-11T00:00:00Z"
   },
@@ -70,6 +40,6 @@
   "proof": {
     "verification_method": "beckn-mobility-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..nPP_0isU1ybjAl5YI8nRSBXtvu-dUxpr8X0kfLlCbfF4M341aY71KzWZpN2puNX0cFYXuf6A4Q3D4VurTNhVDg"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..KRTe3PaZV9pangLFnSPTekuvZVcCdrolLU2zJNdnAA5vNOhxp6lOoDSxj9Dd3K_vXFADD5XaMv3rnT6-uucbBQ"
   }
 }

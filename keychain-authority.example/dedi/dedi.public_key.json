@@ -15,74 +15,7 @@
   "namespace": "keychain-authority.example",
   "registry": {
     "name": "public_key",
-    "schema": {
-      "$id": "https://dedi.global/public_key.json",
-      "$schema": "http://json-schema.org/draft-07/schema#",
-      "title": "Public Key Directory",
-      "description": "This schema is used to get public key details from the public directory for a given entity",
-      "type": "object",
-      "properties": {
-        "public_key_id": {
-          "type": "string",
-          "description": "Unique ID of the entity"
-        },
-        "publicKey": {
-          "type": "string",
-          "description": "currently active public key"
-        },
-        "keyType": {
-          "type": "string",
-          "description": "RSA2048, Edcsa, ed25519"
-        },
-        "keyFormat": {
-          "type": "string",
-          "description": "base58, base64, hex, x.509 etc etc"
-        },
-        "entity": {
-          "type": "object",
-          "description": "Public details of the entity",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "url": {
-              "type": "string",
-              "format": "url"
-            },
-            "address": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "name"
-          ],
-          "additionalProperties": true
-        },
-        "previousKeys": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "publicKey": {
-                "type": "string"
-              },
-              "keyType": {
-                "type": "string"
-              },
-              "keyFormat": {
-                "type": "string"
-              }
-            },
-            "additionalProperties": true
-          }
-        }
-      },
-      "required": [
-        "public_key_id",
-        "publicKey",
-        "keyType"
-      ]
-    },
+    "schema": "https://raw.githubusercontent.com/LF-Decentralized-Trust-labs/decentralized-directory-protocol/main/schemas/Public_key.json",
     "state": "live",
     "updated_at": "2026-08-11T00:00:00Z"
   },
@@ -124,6 +57,6 @@
   "proof": {
     "verification_method": "keychain-authority-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..Tau-MHwxASvbunx5BBchOB1YHWzahhap8ei2GO8Tk9zwBTxKpFmytbx7P2_WMQCd0P19ilZmQTGlJX3qJSeFDw"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..JARUdC3S2-2NiJWgJHlKnWEneY3G8vMg5IRh4iNe0mGxP3w58bYxk28YKlKXsHc8a8FMS4EohhwIXyTOcLxnCQ"
   }
 }

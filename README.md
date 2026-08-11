@@ -25,7 +25,10 @@ silently drops dotfiles/dot-directories, and every `.well-known/dedi.index.json`
 
 Four publishers, together covering all 7 registry schemas from
 [decentralized-directory-protocol/schemas](https://github.com/LF-Decentralized-Trust-labs/decentralized-directory-protocol/tree/main/schemas).
-Everything here verifies as `Verified`.
+Each file's `registry.schema` is the real, canonical URL to that schema in the protocol repo —
+matching the URL-reference style shown in
+[the spec's own DeDi file example](https://github.com/nfh-trust-labs/DeDi/blob/main/docs/publishing-dedi-files.md)
+— rather than an inline copy.
 
 | Domain (path in `domains.txt`) | Manifest `domain` | Registries | What's in it |
 |---|---|---|---|
@@ -33,6 +36,16 @@ Everything here verifies as `Verified`.
 | `civic-trust-registry.example` | `civic-trust-registry.example` | `membership`, `revoke` | 2 membership records + 2 revoked-membership records |
 | `keychain-authority.example` | `keychain-authority.example` | `public_key` | 2 entity public-key records, one with a `previousKeys` rotation history |
 | `open-data-commons.example` | `open-data-commons.example` | `public-data-set`, `public-rule-set` | 2 datasets (one `data_inline`, one `data_url`+checksum) + 2 rulesets (one `data_inline` rego, one `data_url`+checksum jsonlogic) |
+
+Every manifest above still verifies as `Verified` — `registry.schema` isn't part of what a
+manifest's signature covers. But `dedi-crawler`'s `internal/verify.File` doesn't fetch a
+`registry.schema` URL itself (there's no such code path yet — see
+`dedi.schema-url-unresolved.json` below, which exists specifically to test this). So as things
+stand today, every file in this section comes back `Rejected` / `schema_not_resolved`, exactly
+like that bad example, until the crawler grows a schema-fetching step. The record data in each
+file has been confirmed to genuinely validate against the real schema at its URL (fetched and
+compiled independently of the crawler) — the content is correct, it's `verify.File`'s current
+"never fetch external schemas" limitation that's the gap.
 
 ## Mixed example
 
