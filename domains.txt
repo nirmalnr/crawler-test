@@ -1,34 +1,9 @@
-# dedi-crawler test fixtures — domains.txt
-#
-# These are NOT real hostnames. Each entry is a GitHub Pages path acting as
-# a stand-in "domain": https://<entry>/.well-known/dedi.index.json is where
-# the crawler will look for each manifest. Because these entries carry a
-# path (not a bare hostname), crawling this list requires the crawler's
-# discovery.allow_non_standard_domains: true (and verify's matching
-# AllowNonStandardDomains option), per dedi-crawler's config.go — never
-# enable that flag against real, untrusted, internet-crawled content.
-#
-# The domain/publisher.domain/namespace values *inside* each manifest and
-# DeDi file are separate, dummy-but-realistic-looking domains (e.g.
-# beckn-mobility-network.example) — intentionally different from the paths
-# below, since AllowNonStandardDomains also skips the domain-binding check
-# that would otherwise require them to match.
-
+# head: 2026-08-11T00:00:00Z
 nirmalnr.github.io/crawler-test/beckn-mobility-network.example
 nirmalnr.github.io/crawler-test/civic-trust-registry.example
 nirmalnr.github.io/crawler-test/keychain-authority.example
 nirmalnr.github.io/crawler-test/open-data-commons.example
-
-# --- Mixed example: a valid manifest whose registries don't all pass —
-# one verifies fine and should be ingested, the other is expired and
-# should be skipped. Demonstrates that verification is per-file, not
-# all-or-nothing per domain.
 nirmalnr.github.io/crawler-test/mixed-results-registry.example
-
-# --- Bad examples: every manifest/file below is intentionally broken and
-# should be *rejected* by verify.Manifest / verify.File. Each domain name
-# says what it's testing; see each domain's manifest "name" field for the
-# exact expected verify.Reason code.
 nirmalnr.github.io/crawler-test/expired-authority.example
 nirmalnr.github.io/crawler-test/malformed-manifest.example
 nirmalnr.github.io/crawler-test/tampered-manifest.example
