@@ -1,9 +1,7 @@
 # crawler-test
 
 Signed [DeDi protocol](https://github.com/nfh-trust-labs/DeDi/blob/main/docs/publishing-dedi-files.md)
-fixtures, hosted on GitHub Pages, for testing
-[`dedi-crawler`](https://github.com/nfh-trust-labs/dedi-crawler) end to end against real HTTPS
-requests instead of local files.
+fixtures, hosted on GitHub Pages, for testing DeDi Crawlers.
 
 **None of this is real.** Every domain, publisher name, and key is a throwaway fixture. Private
 signing keys live only in a local, gitignored `keys/` directory — never in this repo.
@@ -13,17 +11,9 @@ signing keys live only in a local, gitignored `keys/` directory — never in thi
 `domains.txt` lists each fixture as a GitHub Pages *path* (`nirmalnr.github.io/crawler-test/<name>`),
 not a bare hostname — the crawler treats each path as if it were its own domain and looks for
 `https://<entry>/.well-known/dedi.index.json`. Because these entries aren't hostname-shaped, crawling
-this list requires:
+this list requires setting this as a discovery list.
 
-```yaml
-discovery:
-  seeds:
-    - https://nirmalnr.github.io/crawler-test/domains.txt
-  allow_non_standard_domains: true
-```
-
-`allow_non_standard_domains: true` also disables the domain-binding check in `internal/verify`
-(`manifest.domain`/`publisher.domain`/`namespace` no longer have to equal the crawled path). That's
+This works by disabling the domain-binding check. That's
 why every manifest and file below carries its own dummy-but-realistic-looking domain (e.g.
 `beckn-mobility-network.example`) that's completely different from the GitHub Pages path it's
 actually served from. **Never set this flag outside of testing against fixtures like these.**
