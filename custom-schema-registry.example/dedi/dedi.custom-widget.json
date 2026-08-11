@@ -1,0 +1,45 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/custom-schema-registry.example/dedi/dedi.custom-widget.json",
+  "next_update": "2031-08-11T00:00:00Z",
+  "publisher": {
+    "domain": "custom-schema-registry.example",
+    "key": {
+      "kid": "custom-schema-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "WREED8RfIWMHTaXPT7YyZCR1nU2VpJ9z78t9saewmow"
+    }
+  },
+  "namespace": "custom-schema-registry.example",
+  "registry": {
+    "name": "custom-widget",
+    "schema": "https://nirmalnr.github.io/crawler-test/schemas/custom-widget-registry.schema.json",
+    "state": "live",
+    "updated_at": "2026-08-11T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "widget-1",
+      "details": {
+        "widget_id": "W-001",
+        "name": "Brass Gearwheel",
+        "color": "gold"
+      }
+    },
+    {
+      "record_name": "widget-2",
+      "details": {
+        "widget_id": "W-002",
+        "name": "Copper Sprocket",
+        "color": "copper"
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "custom-schema-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..1xDzxubopAtFcCQgFgfHj1AtWJh3pIy0tSbsayY3e1r3aTUMKjT0Nabb8vu41_1KnFrUD1y5cWCQ9PLjaloFDQ"
+  }
+}

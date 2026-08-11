@@ -37,15 +37,15 @@ matching the URL-reference style shown in
 | `keychain-authority.example` | `keychain-authority.example` | `public_key` | 2 entity public-key records, one with a `previousKeys` rotation history |
 | `open-data-commons.example` | `open-data-commons.example` | `public-data-set`, `public-rule-set` | 2 datasets (one `data_inline`, one `data_url`+checksum) + 2 rulesets (one `data_inline` rego, one `data_url`+checksum jsonlogic) |
 
-Every manifest above still verifies as `Verified` — `registry.schema` isn't part of what a
-manifest's signature covers. But `dedi-crawler`'s `internal/verify.File` doesn't fetch a
-`registry.schema` URL itself (there's no such code path yet — see
-`dedi.schema-url-unresolved.json` below, which exists specifically to test this). So as things
-stand today, every file in this section comes back `Rejected` / `schema_not_resolved`, exactly
-like that bad example, until the crawler grows a schema-fetching step. The record data in each
-file has been confirmed to genuinely validate against the real schema at its URL (fetched and
-compiled independently of the crawler) — the content is correct, it's `verify.File`'s current
-"never fetch external schemas" limitation that's the gap.
+Every manifest and file above verifies and gets ingested — confirmed live, by querying
+`dedi-crawler`'s DeDi.global lookup API after a real crawl. `internal/verify.File` itself never
+fetches a `registry.schema` URL (it only compiles inline schemas), but the caller,
+`internal/reconcile.SyncDomain`, always resolves a URL schema first — via `schemaCache.Content` — and
+hands `verify.File` the already-fetched, already-compiled result. Whether that URL also happens to
+match one of DeDi.global's own canonical schema tags (`mapper.ResolveSchemaTag`) only changes what
+gets sent onward to DeDi.global (a tag vs. the raw schema content) — it doesn't affect whether local
+verification succeeds. See [Custom schema resolution](#custom-schema-resolution) below for the case
+where the URL *doesn't* dereference cleanly.
 
 ### `beckn_subscriber`: subscriber_id vs. domain ownership
 
@@ -60,13 +60,14 @@ that convention:
 | `dummy-rideshare-bpp` | `bpp.beckn-mobility-network.example` | Yes — subdomain |
 | `rogue-imposter-cds` | `mobility.rogue-imposter.example` | **No** — unrelated domain |
 
-**This isn't currently enforced anywhere in `dedi-crawler`.** `internal/verify.File` only validates
-records against `registry.schema`, which (correctly, per the upstream schema) just requires
-`subscriber_id` to be *a* string — it has no way to know what domain published the file. So today,
-`rogue-imposter-cds` verifies exactly as well as the other two; it does **not** get rejected or
-skipped. This record exists so that once such a check is added to the crawler, there's a fixture
-ready to confirm it actually rejects the offending record (as an `IntegrityOnly` or `Rejected`
-outcome — the whole file, since `verify.File` operates per-file, not per-record).
+**`dedi-crawler`'s own `internal/verify.File` doesn't enforce this** — it only validates records
+against `registry.schema`, which (correctly, per the upstream schema) just requires `subscriber_id`
+to be *a* string; `verify` has no way to know what domain published the file, and has no concept of
+per-record rejection within an otherwise-valid file. But querying the live lookup API after a crawl
+confirms `rogue-imposter-cds` is filtered out downstream anyway: `beckn_subscriber`'s
+`record_count` comes back `2`, not `3`. Whatever's enforcing this — evidently something in
+DeDi.global itself, past the point where `dedi-crawler` submits the record — it's real, just not
+visible from reading `dedi-crawler`'s own source.
 
 ## Mixed example
 
@@ -79,6 +80,22 @@ One manifest, two registries — only one of them should actually get ingested.
 
 The manifest itself is fine — this demonstrates that verification is per-file, not all-or-nothing
 per domain.
+
+## Custom schema resolution
+
+Another one-succeeds-one-doesn't manifest, this time isolating `internal/reconcile`'s schema
+dereferencing specifically (see [Good examples](#good-examples) above). `schemas/`
+in this repo hosts a small publisher-controlled schema, `custom-widget-registry.schema.json` —
+genuinely fetchable, but not one of DeDi.global's recognized canonical tags.
+
+| Domain | Registry | `registry.schema` | Expected outcome |
+|---|---|---|---|
+| `custom-schema-registry.example` | `custom-widget` | `https://nirmalnr.github.io/crawler-test/schemas/custom-widget-registry.schema.json` (valid, in this repo) | `Verified` — ingested |
+| `custom-schema-registry.example` | `custom-schema-unreachable` | `https://nirmalnr.github.io/crawler-test/schemas/does-not-exist.schema.json` (404) | Never reaches `verify.File` — `schemaCache.Content` fails first, logged as `schema_dereference_failed`; **skipped** |
+
+This replaces an earlier, incorrect fixture (`dedi.schema-url-unresolved.json`, formerly in
+`bad-registry-examples.example`) that reused one of the *canonical* schema URLs and so — once
+actually crawled — verified and ingested just fine instead of demonstrating a failure.
 
 ## Bad examples
 
@@ -112,15 +129,19 @@ One valid, verifiable manifest — every file it references is broken a differen
 | `dedi.schema-violation.json` | A record is missing a field the registry's own schema requires | `Rejected` / `record_schema_violation` |
 | `dedi.bad-key-type.json` | Signed, then `publisher.key.kty` was changed to `RSA` | `Rejected` / `publisher_key_invalid` |
 | `dedi.verification-method-mismatch.json` | Signed, then `proof.verification_method` was changed to a key ID that doesn't match `publisher.key.kid` | `Rejected` / `verification_method_mismatch` |
-| `dedi.schema-url-unresolved.json` | `registry.schema` is a URL reference instead of inline — the crawler never fetches external schema URLs | `Rejected` / `schema_not_resolved` |
 | `dedi.invalid-schema.json` | The inline JSON Schema itself is malformed (`required` is a string, not an array) | `Rejected` / `schema_invalid` |
 | `dedi.malformed.json` | The file isn't valid JSON (truncated) | `Rejected` / `unparseable` |
 
 ### Not covered here
 
-Two `internal/verify` reasons aren't demonstrated by any fixture in this repo:
+Three `internal/verify` reasons aren't demonstrated by any fixture in this repo:
 
 - **`domain_mismatch` / `manifest_domain_mismatch`** — require running *without*
   `allow_non_standard_domains`, which every fixture here depends on to be crawlable at all as a
   GitHub Pages path.
 - **`canonicalization_failed`** — not practically constructible by hand-editing otherwise-valid JSON.
+- **`schema_not_resolved`** — unreachable via a real crawl. `internal/reconcile.SyncDomain` always
+  resolves a URL schema (fetch + compile) *before* calling `verify.File`, and `continue`s past the
+  file entirely if that fails — `verify.File`'s own `schema == nil` branch that produces this reason
+  only fires when something calls it directly, bypassing `reconcile`, the way earlier ad-hoc checks
+  in this repo's history did.

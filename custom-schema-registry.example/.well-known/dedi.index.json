@@ -1,0 +1,33 @@
+{
+  "type": "dedi-manifest",
+  "dedi_version": "0.1",
+  "domain": "custom-schema-registry.example",
+  "name": "Dummy Custom Schema Registry (test fixture: one registry uses a valid non-tag schema URL, one uses an unreachable one)",
+  "keys": [
+    {
+      "kid": "custom-schema-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "WREED8RfIWMHTaXPT7YyZCR1nU2VpJ9z78t9saewmow"
+    }
+  ],
+  "updated_at": "2026-08-11T00:00:00Z",
+  "next_update": "2031-08-11T00:00:00Z",
+  "files": [
+    {
+      "registry": "custom-widget",
+      "url": "https://nirmalnr.github.io/crawler-test/custom-schema-registry.example/dedi/dedi.custom-widget.json",
+      "digest": "sha-256:5df1bb72e9de2da90bcd50050cd74a369e490e89a2efab9a57d138232ab1294a"
+    },
+    {
+      "registry": "custom-schema-unreachable",
+      "url": "https://nirmalnr.github.io/crawler-test/custom-schema-registry.example/dedi/dedi.custom-schema-unreachable.json",
+      "digest": "sha-256:8db10373df4b3a76ca6bc8dad8f10336aa1a03b6e64f8fa35ec2da6692b816cd"
+    }
+  ],
+  "proof": {
+    "verification_method": "custom-schema-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..-yRmNTMzfoOiIXZRlfmyJrxCRtubBNF5JBbyI8md0qGk0iPfu9SXhAh4k0-fObmwPM9hQCjM_-6mgiGLqDjKCQ"
+  }
+}

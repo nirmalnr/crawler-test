@@ -50,11 +50,6 @@
       "digest": "sha-256:96cc0525ecdff26fe6c9bfce506b401dd85f4ac9aff2b60689235857a7ad31d3"
     },
     {
-      "registry": "schema-url-unresolved-example",
-      "url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.schema-url-unresolved.json",
-      "digest": "sha-256:16a53885158bd9d318be9927eb739070e91cf93c3e9d2a9ffa73da3e54a016c7"
-    },
-    {
       "registry": "invalid-schema-example",
       "url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.invalid-schema.json",
       "digest": "sha-256:4f91f6cba21f6c3fe43695847cd04638180d927965f0e8def03c667351d3d89b"
@@ -68,6 +63,6 @@
   "proof": {
     "verification_method": "bad-registry-examples-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..b8zsplkwv5eoQ7KxayQHipIRLGPRP7V3p1ukf_fnxWnv8weSpoQ30X1UeULq1Uls-QwJSZGWl_VVuZrfeJUyCA"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..w463ODkQahveQEe7njaObe-_u6qRDYsBPU8OwGbPvumUkl5LzaaZPtheZ1QLMqiO-a2bl0EjIz7hpDttNSyXAQ"
   }
 }

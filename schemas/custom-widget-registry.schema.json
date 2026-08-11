@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nirmalnr.github.io/crawler-test/schemas/custom-widget-registry.schema.json",
+  "title": "Custom Widget Registry Schema",
+  "description": "A publisher-controlled schema (docs/publishing-dedi-files.md §10's second form), hosted in this repo rather than the canonical decentralized-directory-protocol schema set — not a recognized DeDi.global schema tag.",
+  "type": "object",
+  "required": ["widget_id", "name"],
+  "properties": {
+    "widget_id": {
+      "type": "string",
+      "description": "Unique ID of the widget"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable widget name"
+    },
+    "color": {
+      "type": "string",
+      "description": "Display color"
+    }
+  },
+  "additionalProperties": false
+}
