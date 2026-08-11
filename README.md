@@ -32,7 +32,7 @@ matching the URL-reference style shown in
 
 | Domain (path in `domains.txt`) | Manifest `domain` | Registries | What's in it |
 |---|---|---|---|
-| `beckn-mobility-network.example` | `beckn-mobility-network.example` | `beckn_subscriber`, `beckn_subscriber_reference` | 2 subscriber records (a BAP and a BPP) + 2 reference records pointing back at them |
+| `beckn-mobility-network.example` | `beckn-mobility-network.example` | `beckn_subscriber`, `beckn_subscriber_reference` | 3 subscriber records (a BAP and a BPP whose `subscriber_id` is a subdomain of the manifest's domain, plus one rogue record that isn't — see below) + 2 reference records pointing back at the two conformant ones |
 | `civic-trust-registry.example` | `civic-trust-registry.example` | `membership`, `revoke` | 2 membership records + 2 revoked-membership records |
 | `keychain-authority.example` | `keychain-authority.example` | `public_key` | 2 entity public-key records, one with a `previousKeys` rotation history |
 | `open-data-commons.example` | `open-data-commons.example` | `public-data-set`, `public-rule-set` | 2 datasets (one `data_inline`, one `data_url`+checksum) + 2 rulesets (one `data_inline` rego, one `data_url`+checksum jsonlogic) |
@@ -46,6 +46,27 @@ like that bad example, until the crawler grows a schema-fetching step. The recor
 file has been confirmed to genuinely validate against the real schema at its URL (fetched and
 compiled independently of the crawler) — the content is correct, it's `verify.File`'s current
 "never fetch external schemas" limitation that's the gap.
+
+### `beckn_subscriber`: subscriber_id vs. domain ownership
+
+Real beckn network operators expect a `beckn_subscriber` record's `subscriber_id` to be the
+publisher's own domain or a subdomain of it — proving the registrant actually owns the identity
+it's claiming, not just any string that satisfies the schema. `dedi.beckn_subscriber.json` reflects
+that convention:
+
+| `record_name` | `subscriber_id` | Conforms to `beckn-mobility-network.example`? |
+|---|---|---|
+| `dummy-transit-bap` | `bap.beckn-mobility-network.example` | Yes — subdomain |
+| `dummy-rideshare-bpp` | `bpp.beckn-mobility-network.example` | Yes — subdomain |
+| `rogue-imposter-cds` | `mobility.rogue-imposter.example` | **No** — unrelated domain |
+
+**This isn't currently enforced anywhere in `dedi-crawler`.** `internal/verify.File` only validates
+records against `registry.schema`, which (correctly, per the upstream schema) just requires
+`subscriber_id` to be *a* string — it has no way to know what domain published the file. So today,
+`rogue-imposter-cds` verifies exactly as well as the other two; it does **not** get rejected or
+skipped. This record exists so that once such a check is added to the crawler, there's a fixture
+ready to confirm it actually rejects the offending record (as an `IntegrityOnly` or `Rejected`
+outcome — the whole file, since `verify.File` operates per-file, not per-record).
 
 ## Mixed example
 

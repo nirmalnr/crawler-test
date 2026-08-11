@@ -23,7 +23,7 @@
     {
       "record_name": "dummy-transit-bap-ref",
       "details": {
-        "subscriber_id": "mobility.bap.dummy-transit.example",
+        "subscriber_id": "bap.beckn-mobility-network.example",
         "url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber.json",
         "type": "Record"
       }
@@ -31,7 +31,7 @@
     {
       "record_name": "dummy-rideshare-bpp-ref",
       "details": {
-        "subscriber_id": "mobility.bpp.dummy-rideshare.example",
+        "subscriber_id": "bpp.beckn-mobility-network.example",
         "url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber.json",
         "type": "Registry"
       }
@@ -40,6 +40,6 @@
   "proof": {
     "verification_method": "beckn-mobility-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..KRTe3PaZV9pangLFnSPTekuvZVcCdrolLU2zJNdnAA5vNOhxp6lOoDSxj9Dd3K_vXFADD5XaMv3rnT6-uucbBQ"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..JWWNkdTdM8qz3XtOsQ-4vAfjGMJkbfp5JiAhwkWZrah6vpkhcZqst4i2Pdxok2EuoKKX7GyIWTgbCBN1sGUODw"
   }
 }

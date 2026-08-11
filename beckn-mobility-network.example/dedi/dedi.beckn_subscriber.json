@@ -23,7 +23,7 @@
     {
       "record_name": "dummy-transit-bap",
       "details": {
-        "subscriber_id": "mobility.bap.dummy-transit.example",
+        "subscriber_id": "bap.beckn-mobility-network.example",
         "url": "https://api.dummy-transit.example/beckn/bap",
         "type": "BAP",
         "countries": [
@@ -36,7 +36,7 @@
     {
       "record_name": "dummy-rideshare-bpp",
       "details": {
-        "subscriber_id": "mobility.bpp.dummy-rideshare.example",
+        "subscriber_id": "bpp.beckn-mobility-network.example",
         "url": "https://api.dummy-rideshare.example/beckn/bpp",
         "type": "BPP",
         "countries": [
@@ -45,11 +45,23 @@
         ],
         "signing_public_key": "MCowBQYDK2VwAyEAk3L8mN2pQxV5cB1yT7rH0oW9fD4uJ6aG2sE8nX3vYtQ"
       }
+    },
+    {
+      "record_name": "rogue-imposter-cds",
+      "details": {
+        "subscriber_id": "mobility.rogue-imposter.example",
+        "url": "https://api.rogue-imposter.example/beckn/cds",
+        "type": "CDS",
+        "countries": [
+          "USA"
+        ],
+        "signing_public_key": "MCowBQYDK2VwAyEAf2N9oR4qTzW6dC2yU8sJ1pX5eK7gH0aB3nM9jV2wYtE"
+      }
     }
   ],
   "proof": {
     "verification_method": "beckn-mobility-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..pqble82Q4O1eyaG5iznStLcQwcWohq1eUbiJ60X7M0Tpz4JSpZrHSDfTCGLSZUdQPx-J6bQ8cD3UAVigXKFnCA"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..Z_QhlrAHScc5heB4YGLxo8gmbN9kB1A4tBdq4IeNh1g8VRn6TDP5X3ygikwu_Orvz83-nANoK-9r32J-oY4SBQ"
   }
 }
