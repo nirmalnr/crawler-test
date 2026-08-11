@@ -1,0 +1,75 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber_reference.json",
+  "next_update": "2031-08-11T00:00:00Z",
+  "publisher": {
+    "domain": "beckn-mobility-network.example",
+    "key": {
+      "kid": "beckn-mobility-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "JO0KM2AiW-DPq0vQ-AHOVHsNKgAEKkDEE_ZknCGAzXA"
+    }
+  },
+  "namespace": "beckn-mobility-network.example",
+  "registry": {
+    "name": "beckn_subscriber_reference",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Beckn Subscriber Reference",
+      "description": "A registry entry describing reference to subscription details (either whole registries or single records) created by NFOs.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "subscriber_id": {
+          "type": "string",
+          "description": "Globally unique identifier of the platform, typically an FQDN."
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Specifies the DeDi lookup URL pointing to another record/registry created using the schema beckn-subscriber."
+        },
+        "type": {
+          "type": "string",
+          "description": "Whether the entry is referencing a Record or a Registry.",
+          "enum": [
+            "Registry",
+            "Record"
+          ]
+        }
+      },
+      "required": [
+        "subscriber_id",
+        "url",
+        "type"
+      ]
+    },
+    "state": "live",
+    "updated_at": "2026-08-11T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "dummy-transit-bap-ref",
+      "details": {
+        "subscriber_id": "mobility.bap.dummy-transit.example",
+        "url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber.json",
+        "type": "Record"
+      }
+    },
+    {
+      "record_name": "dummy-rideshare-bpp-ref",
+      "details": {
+        "subscriber_id": "mobility.bpp.dummy-rideshare.example",
+        "url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber.json",
+        "type": "Registry"
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "beckn-mobility-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..nPP_0isU1ybjAl5YI8nRSBXtvu-dUxpr8X0kfLlCbfF4M341aY71KzWZpN2puNX0cFYXuf6A4Q3D4VurTNhVDg"
+  }
+}

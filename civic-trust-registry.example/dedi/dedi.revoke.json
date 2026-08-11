@@ -1,0 +1,62 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/civic-trust-registry.example/dedi/dedi.revoke.json",
+  "next_update": "2031-08-11T00:00:00Z",
+  "publisher": {
+    "domain": "civic-trust-registry.example",
+    "key": {
+      "kid": "civic-trust-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "p4WfJaRt_9GOn8IUW-Sdyr51KnI-_VG94836pPFtQjg"
+    }
+  },
+  "namespace": "civic-trust-registry.example",
+  "registry": {
+    "name": "revoke",
+    "schema": {
+      "$id": "https://dedi.global/revoke.json",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Revoke or Negative List",
+      "description": "Revocation List. This schema is used to represent anything which is revoked/blacklisted aka, negative list. Examples are blacklisted entities in a country, no-fly list, list of credentials revoked from the issuance in an university",
+      "type": "object",
+      "properties": {
+        "revoked_id": {
+          "type": "string",
+          "description": "Unique ID which is getting revoked"
+        },
+        "reason": {
+          "description": "Reason for revocation / blacklisting",
+          "type": "string"
+        }
+      },
+      "required": [
+        "revoked_id"
+      ]
+    },
+    "state": "live",
+    "updated_at": "2026-08-11T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "revoked-membership-789",
+      "details": {
+        "revoked_id": "CTR-000789",
+        "reason": "Membership terminated for policy violation"
+      }
+    },
+    {
+      "record_name": "revoked-membership-999",
+      "details": {
+        "revoked_id": "CTR-000999",
+        "reason": "Voluntarily withdrawn"
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "civic-trust-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..fOIsehV19K0TmIgTzr4KmeOt2YpROxSc2LHVITkvljsDwWJlkdDDA0t4MuUBlIrTyo_xb66JKMHypUT2UZ6DBQ"
+  }
+}

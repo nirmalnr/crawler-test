@@ -1,0 +1,33 @@
+{
+  "type": "dedi-manifest",
+  "dedi_version": "0.1",
+  "domain": "open-data-commons.example",
+  "name": "Dummy Open Data Commons (test fixture, not a real domain)",
+  "keys": [
+    {
+      "kid": "open-data-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "35djPY9FDJRgokZWkiN2tZkOYdQT-_4Jgh4EmLHUWec"
+    }
+  ],
+  "updated_at": "2026-08-11T00:00:00Z",
+  "next_update": "2031-08-11T00:00:00Z",
+  "files": [
+    {
+      "registry": "public-data-set",
+      "url": "https://nirmalnr.github.io/crawler-test/open-data-commons.example/dedi/dedi.public-data-set.json",
+      "digest": "sha-256:f6abf04bab24f5bc19215f3797ca051f6735b155aebb054ea436ce732407462e"
+    },
+    {
+      "registry": "public-rule-set",
+      "url": "https://nirmalnr.github.io/crawler-test/open-data-commons.example/dedi/dedi.public-rule-set.json",
+      "digest": "sha-256:0962f04d3f9b37bf4db261dbd355d533d3bd033118af815a7ff742363ab69719"
+    }
+  ],
+  "proof": {
+    "verification_method": "open-data-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..4h3V3SOpXqdVLmvzUfnuq_jiJ57UASHQjJf9Ox6vCKBAqWnDpqLXwjECMPUwCiDFw59Dbmrz9Mpo02feDTgMAA"
+  }
+}

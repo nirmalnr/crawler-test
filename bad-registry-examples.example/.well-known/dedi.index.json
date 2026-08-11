@@ -1,0 +1,73 @@
+{
+  "type": "dedi-manifest",
+  "dedi_version": "0.1",
+  "domain": "bad-registry-examples.example",
+  "name": "BAD EXAMPLES: valid manifest, each referenced file exercises a different verify.File rejection reason",
+  "keys": [
+    {
+      "kid": "bad-registry-examples-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "6dcoPok__53csPOXNncXTf8MbnNdtk4lbTdqKD_FajM"
+    }
+  ],
+  "updated_at": "2026-08-11T00:00:00Z",
+  "next_update": "2031-08-11T00:00:00Z",
+  "files": [
+    {
+      "registry": "tampered-example",
+      "url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.tampered.json",
+      "digest": "sha-256:d79b93d508a33b26632d10e5f8c2957e7de607ae7dffdc53105438171893ef8e"
+    },
+    {
+      "registry": "expired-example",
+      "url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.expired.json",
+      "digest": "sha-256:93d9fd2dbb3ce08d9850d5dce4ba50543aea85851fbb4c314469f8d54d9b45b3"
+    },
+    {
+      "registry": "inactive-example",
+      "url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.inactive.json",
+      "digest": "sha-256:68ea1733018c1d4dfd108073c762e12376c8ac1a7d9a6a1527f216d9164d51d9"
+    },
+    {
+      "registry": "rotated-key-example",
+      "url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.rotated-key.json",
+      "digest": "sha-256:7cf8db3966975d79a78988c09153e8ba4fc3f9880ac42f0ea9cab5cd9e29ca8e"
+    },
+    {
+      "registry": "schema-violation-example",
+      "url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.schema-violation.json",
+      "digest": "sha-256:2ea82121fd84817f4d52f6e0874629c4ef1124ecad7255463635c2e27cd70f90"
+    },
+    {
+      "registry": "bad-key-type-example",
+      "url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.bad-key-type.json",
+      "digest": "sha-256:c7d2a5e69c86cd28eef3ef04b781fffff8389a72c06cb10c2c9b663993d66e80"
+    },
+    {
+      "registry": "verification-method-mismatch-example",
+      "url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.verification-method-mismatch.json",
+      "digest": "sha-256:96cc0525ecdff26fe6c9bfce506b401dd85f4ac9aff2b60689235857a7ad31d3"
+    },
+    {
+      "registry": "schema-url-unresolved-example",
+      "url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.schema-url-unresolved.json",
+      "digest": "sha-256:16a53885158bd9d318be9927eb739070e91cf93c3e9d2a9ffa73da3e54a016c7"
+    },
+    {
+      "registry": "invalid-schema-example",
+      "url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.invalid-schema.json",
+      "digest": "sha-256:4f91f6cba21f6c3fe43695847cd04638180d927965f0e8def03c667351d3d89b"
+    },
+    {
+      "registry": "malformed-example",
+      "url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.malformed.json",
+      "digest": "sha-256:6ee705211ecfe30ce477e3fc93a3c59b44269c60977b4e2935ebc68f71a2a6f6"
+    }
+  ],
+  "proof": {
+    "verification_method": "bad-registry-examples-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..b8zsplkwv5eoQ7KxayQHipIRLGPRP7V3p1ukf_fnxWnv8weSpoQ30X1UeULq1Uls-QwJSZGWl_VVuZrfeJUyCA"
+  }
+}

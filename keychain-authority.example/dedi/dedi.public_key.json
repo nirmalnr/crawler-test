@@ -1,0 +1,129 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/keychain-authority.example/dedi/dedi.public_key.json",
+  "next_update": "2031-08-11T00:00:00Z",
+  "publisher": {
+    "domain": "keychain-authority.example",
+    "key": {
+      "kid": "keychain-authority-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "kk7ZIT50VPpIu5Ly63iVP9ZZ1omU51yNZOXVpxtfeBM"
+    }
+  },
+  "namespace": "keychain-authority.example",
+  "registry": {
+    "name": "public_key",
+    "schema": {
+      "$id": "https://dedi.global/public_key.json",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Public Key Directory",
+      "description": "This schema is used to get public key details from the public directory for a given entity",
+      "type": "object",
+      "properties": {
+        "public_key_id": {
+          "type": "string",
+          "description": "Unique ID of the entity"
+        },
+        "publicKey": {
+          "type": "string",
+          "description": "currently active public key"
+        },
+        "keyType": {
+          "type": "string",
+          "description": "RSA2048, Edcsa, ed25519"
+        },
+        "keyFormat": {
+          "type": "string",
+          "description": "base58, base64, hex, x.509 etc etc"
+        },
+        "entity": {
+          "type": "object",
+          "description": "Public details of the entity",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "url"
+            },
+            "address": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "additionalProperties": true
+        },
+        "previousKeys": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "publicKey": {
+                "type": "string"
+              },
+              "keyType": {
+                "type": "string"
+              },
+              "keyFormat": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "required": [
+        "public_key_id",
+        "publicKey",
+        "keyType"
+      ]
+    },
+    "state": "live",
+    "updated_at": "2026-08-11T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "northbridge-data-trust",
+      "details": {
+        "public_key_id": "KA-ENTITY-001",
+        "publicKey": "MCowBQYDK2VwAyEAZm9vYmFyYmF6cXV1eGR1bW15a2V5MDE",
+        "keyType": "ed25519",
+        "keyFormat": "base64",
+        "entity": {
+          "name": "Northbridge Data Trust",
+          "url": "https://northbridge-data-trust.example",
+          "address": "400 Meridian Ave"
+        }
+      }
+    },
+    {
+      "record_name": "solace-municipal-registry",
+      "details": {
+        "public_key_id": "KA-ENTITY-002",
+        "publicKey": "MCowBQYDK2VwAyEAdmFsaWRrZXlzYW1wbGVkdW1teTAy",
+        "keyType": "ed25519",
+        "keyFormat": "base64",
+        "entity": {
+          "name": "Solace Municipal Registry"
+        },
+        "previousKeys": [
+          {
+            "publicKey": "MCowBQYDK2VwAyEAb2xka2V5c2FtcGxlZHVtbXkwMQ",
+            "keyType": "ed25519",
+            "keyFormat": "base64"
+          }
+        ]
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "keychain-authority-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..Tau-MHwxASvbunx5BBchOB1YHWzahhap8ei2GO8Tk9zwBTxKpFmytbx7P2_WMQCd0P19ilZmQTGlJX3qJSeFDw"
+  }
+}

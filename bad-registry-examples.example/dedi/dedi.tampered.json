@@ -1,0 +1,45 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.tampered.json",
+  "next_update": "2031-08-11T00:00:00Z",
+  "publisher": {
+    "domain": "bad-registry-examples.example",
+    "key": {
+      "kid": "bad-registry-examples-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "6dcoPok__53csPOXNncXTf8MbnNdtk4lbTdqKD_FajM"
+    }
+  },
+  "namespace": "bad-registry-examples.example",
+  "registry": {
+    "name": "tampered-example",
+    "schema": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "state": "live",
+    "updated_at": "2026-08-11T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "record-1",
+      "details": {
+        "name": "TAMPERED AFTER SIGNING — this should not verify"
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "bad-registry-examples-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..KjPN2IIFpZdJgSr9_2KKx_0yHNSxjVhSKUfvCBxeUTLViIsj97HZJmn_ef6tSV719RdhdUbayudgiq5SVhY7Bw"
+  }
+}

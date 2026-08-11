@@ -1,0 +1,6 @@
+{
+  "type": "dedi-manifest",
+  "dedi_version": "0.1",
+  "domain": "malformed-manifest.example",
+  "name": "BAD EXAMPLE: this file is not valid JSON (truncated on purpose)",
+  "keys": [

@@ -1,0 +1,33 @@
+{
+  "type": "dedi-manifest",
+  "dedi_version": "0.1",
+  "domain": "mixed-results-registry.example",
+  "name": "Dummy Mixed Results Registry (test fixture: one registry valid, one registry expired)",
+  "keys": [
+    {
+      "kid": "mixed-results-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "b8_Z-qzjPV4qPX399wvWnBab-E-T2KRSusLqLq9NW5E"
+    }
+  ],
+  "updated_at": "2026-08-11T00:00:00Z",
+  "next_update": "2031-08-11T00:00:00Z",
+  "files": [
+    {
+      "registry": "current-members",
+      "url": "https://nirmalnr.github.io/crawler-test/mixed-results-registry.example/dedi/dedi.current-members.json",
+      "digest": "sha-256:ddef40fc76d6700414dcf1d8b2b0bb10a73e575720140d39e857b8918d00b16e"
+    },
+    {
+      "registry": "stale-blacklist",
+      "url": "https://nirmalnr.github.io/crawler-test/mixed-results-registry.example/dedi/dedi.stale-blacklist.json",
+      "digest": "sha-256:7a692f80e2d446a41b0ae3d6f4fda6ba31476dc88815640174047dd8d1acbe90"
+    }
+  ],
+  "proof": {
+    "verification_method": "mixed-results-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..OStUmjRpK2WHwOHq2nDAVNmjRoN_dCFchnsHBZBqOlppH890wRnbS7cKQc9FeynHae_uTuXB8Qvq6rc-yvOOAg"
+  }
+}

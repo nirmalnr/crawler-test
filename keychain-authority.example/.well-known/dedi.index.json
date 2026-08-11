@@ -1,0 +1,28 @@
+{
+  "type": "dedi-manifest",
+  "dedi_version": "0.1",
+  "domain": "keychain-authority.example",
+  "name": "Dummy Keychain Authority (test fixture, not a real domain)",
+  "keys": [
+    {
+      "kid": "keychain-authority-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "kk7ZIT50VPpIu5Ly63iVP9ZZ1omU51yNZOXVpxtfeBM"
+    }
+  ],
+  "updated_at": "2026-08-11T00:00:00Z",
+  "next_update": "2031-08-11T00:00:00Z",
+  "files": [
+    {
+      "registry": "public_key",
+      "url": "https://nirmalnr.github.io/crawler-test/keychain-authority.example/dedi/dedi.public_key.json",
+      "digest": "sha-256:11dbd20f0ccde523ad7ea98268631fcb8ead331d7e6a33cc2b4c4d9a82af06b1"
+    }
+  ],
+  "proof": {
+    "verification_method": "keychain-authority-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..GOWslGmNdGHuz7RewSj_mgnp7vVddcT7l-u5sgshZgC9or7j_5--4b-WJuTDQadCeQFt9HtXB2U6miWc5a6sBQ"
+  }
+}

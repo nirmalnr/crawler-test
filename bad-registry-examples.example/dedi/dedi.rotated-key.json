@@ -1,0 +1,45 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.rotated-key.json",
+  "next_update": "2031-08-11T00:00:00Z",
+  "publisher": {
+    "domain": "bad-registry-examples.example",
+    "key": {
+      "kid": "rotated-out-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "cJjEAY97syaDABRZGHuA6TKALXhnJ68DzAkgp_ogaqU"
+    }
+  },
+  "namespace": "bad-registry-examples.example",
+  "registry": {
+    "name": "rotated-key-example",
+    "schema": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "state": "live",
+    "updated_at": "2026-08-11T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "record-1",
+      "details": {
+        "name": "Signed By A Key The Manifest Never Listed"
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "rotated-out-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..-fHkKETosuzG_-hf9KaVlM5Ct_Zxho3kuB628hzSBvRnHIO39UqzKAMqbBXtDZ3b6qW9PV07Frhh3S_nte99CQ"
+  }
+}

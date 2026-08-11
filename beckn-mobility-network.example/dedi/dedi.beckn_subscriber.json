@@ -1,0 +1,119 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber.json",
+  "next_update": "2031-08-11T00:00:00Z",
+  "publisher": {
+    "domain": "beckn-mobility-network.example",
+    "key": {
+      "kid": "beckn-mobility-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "JO0KM2AiW-DPq0vQ-AHOVHsNKgAEKkDEE_ZknCGAzXA"
+    }
+  },
+  "namespace": "beckn-mobility-network.example",
+  "registry": {
+    "name": "beckn_subscriber",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Beckn Subscriber",
+      "description": "A registry entry describing endpoints and keys of a beckn network participant.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "subscriber_id": {
+          "type": "string",
+          "description": "Globally unique identifier of the platform, typically an FQDN."
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Specifies the callback URL of the subscriber."
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of role played in the network (Beckn Application Provider, Beckn Platform Provider, Catalogue Service, Discovery Service)",
+          "enum": [
+            "BAP",
+            "BPP",
+            "CS",
+            "DS",
+            "CDS"
+          ]
+        },
+        "domain": {
+          "type": "string",
+          "description": "Operating industry domain that this subscriber offers its products or services in. A single subscriber can operate in multiple domains and each can be added as a separate record. This field is deprecated and will be removed from the registry."
+        },
+        "countries": {
+          "type": "array",
+          "description": "Countries where the subscriber operates, provides services, or conducts business.",
+          "items": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-3 country code.",
+            "enum": [
+              "IND",
+              "USA",
+              "GBR",
+              "ARE",
+              "SGP"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "signing_public_key": {
+          "type": "string",
+          "description": "Signing public key of the subscriber."
+        },
+        "encr_public_key": {
+          "type": "string",
+          "description": "Encryption public key of the subscriber."
+        }
+      },
+      "required": [
+        "subscriber_id",
+        "url",
+        "type",
+        "countries",
+        "signing_public_key"
+      ]
+    },
+    "state": "live",
+    "updated_at": "2026-08-11T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "dummy-transit-bap",
+      "details": {
+        "subscriber_id": "mobility.bap.dummy-transit.example",
+        "url": "https://api.dummy-transit.example/beckn/bap",
+        "type": "BAP",
+        "countries": [
+          "IND"
+        ],
+        "signing_public_key": "MCowBQYDK2VwAyEAe1F3k9pQxN0lZC7yq2m8T4vR6bU0wA2sK5hD3jN8pXo",
+        "encr_public_key": "MCowBQYDK2VuAyEAr8D2fJ0kM1nQvB9xL3tS6yH4wE7uP0aZ5cV2jR9mFdI"
+      }
+    },
+    {
+      "record_name": "dummy-rideshare-bpp",
+      "details": {
+        "subscriber_id": "mobility.bpp.dummy-rideshare.example",
+        "url": "https://api.dummy-rideshare.example/beckn/bpp",
+        "type": "BPP",
+        "countries": [
+          "IND",
+          "USA"
+        ],
+        "signing_public_key": "MCowBQYDK2VwAyEAk3L8mN2pQxV5cB1yT7rH0oW9fD4uJ6aG2sE8nX3vYtQ"
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "beckn-mobility-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..AwQtUn_r1NUWeCKwn0NW5eK_cS4H8TrB_cNuiKu7jz_zEq_OupD5TSSXGkkWZTyw3VwsecDMuDJkcdobLFI2Aw"
+  }
+}

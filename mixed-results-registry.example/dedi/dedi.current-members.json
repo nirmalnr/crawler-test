@@ -1,0 +1,78 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/mixed-results-registry.example/dedi/dedi.current-members.json",
+  "next_update": "2031-08-11T00:00:00Z",
+  "publisher": {
+    "domain": "mixed-results-registry.example",
+    "key": {
+      "kid": "mixed-results-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "b8_Z-qzjPV4qPX399wvWnBab-E-T2KRSusLqLq9NW5E"
+    }
+  },
+  "namespace": "mixed-results-registry.example",
+  "registry": {
+    "name": "current-members",
+    "schema": {
+      "$id": "https://dedi.global/membership.json",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "membership_id": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "additionalProperties": true
+        },
+        "memberSince": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "membership_id",
+        "detail"
+      ]
+    },
+    "state": "live",
+    "updated_at": "2026-08-11T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "member-1",
+      "details": {
+        "membership_id": "MRR-000111",
+        "detail": {
+          "name": "Hollow Pine Trading Co-op"
+        },
+        "memberSince": "2023-02-10"
+      }
+    },
+    {
+      "record_name": "member-2",
+      "details": {
+        "membership_id": "MRR-000222",
+        "detail": {
+          "name": "Driftwood Makers Guild"
+        },
+        "memberSince": "2024-06-01"
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "mixed-results-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..2kPgltYrgUt9BjjnwH5OGEj74s3lwbTA9QxftAfQjPPwg-3wFZRMPN9JLpTXJGPUbtAyt27yiCmt_eDjw7zzBg"
+  }
+}

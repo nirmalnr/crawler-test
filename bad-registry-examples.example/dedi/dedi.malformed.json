@@ -1,0 +1,5 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.malformed.json",
+  "publisher": { "domain": "bad-registry-examples.example"

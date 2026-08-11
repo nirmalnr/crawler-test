@@ -1,0 +1,51 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/mixed-results-registry.example/dedi/dedi.stale-blacklist.json",
+  "next_update": "2025-01-01T00:00:00Z",
+  "publisher": {
+    "domain": "mixed-results-registry.example",
+    "key": {
+      "kid": "mixed-results-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "b8_Z-qzjPV4qPX399wvWnBab-E-T2KRSusLqLq9NW5E"
+    }
+  },
+  "namespace": "mixed-results-registry.example",
+  "registry": {
+    "name": "stale-blacklist",
+    "schema": {
+      "$id": "https://dedi.global/revoke.json",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "revoked_id": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "revoked_id"
+      ]
+    },
+    "state": "live",
+    "updated_at": "2024-06-01T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "revoked-1",
+      "details": {
+        "revoked_id": "MRR-000333",
+        "reason": "Expelled for repeated code-of-conduct violations"
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "mixed-results-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..CyYK9kwMwNjdh2QXOlobkmujeWpshiPITglU9jx_E30AZqP3TNZORUY-vWD-9uUXNIeONp69le87d8oagOxNDg"
+  }
+}

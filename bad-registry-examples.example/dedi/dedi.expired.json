@@ -1,0 +1,45 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/bad-registry-examples.example/dedi/dedi.expired.json",
+  "next_update": "2025-06-01T00:00:00Z",
+  "publisher": {
+    "domain": "bad-registry-examples.example",
+    "key": {
+      "kid": "bad-registry-examples-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "6dcoPok__53csPOXNncXTf8MbnNdtk4lbTdqKD_FajM"
+    }
+  },
+  "namespace": "bad-registry-examples.example",
+  "registry": {
+    "name": "expired-example",
+    "schema": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "state": "live",
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "record-1",
+      "details": {
+        "name": "Stale Record"
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "bad-registry-examples-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..yDMqAbvhXlIbrpzuv6rsrrY66tSx9h864giqiP2LOaB5O8S_id25lUAKBfLY_tbAHcKx_W8Q9vdz-tes-5xqBg"
+  }
+}

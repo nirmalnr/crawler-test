@@ -1,0 +1,178 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/open-data-commons.example/dedi/dedi.public-rule-set.json",
+  "next_update": "2031-08-11T00:00:00Z",
+  "publisher": {
+    "domain": "open-data-commons.example",
+    "key": {
+      "kid": "open-data-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "35djPY9FDJRgokZWkiN2tZkOYdQT-_4Jgh4EmLHUWec"
+    }
+  },
+  "namespace": "open-data-commons.example",
+  "registry": {
+    "name": "public-rule-set",
+    "schema": {
+      "type": "object",
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "data_url"
+            ]
+          },
+          "then": {
+            "required": [
+              "data_url_checksum",
+              "data_url_checksum_type"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "data_url_checksum_type"
+            ],
+            "properties": {
+              "data_url_checksum_type": {
+                "const": "other"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "data_url_checksum_type_other"
+            ]
+          }
+        }
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "data_url"
+          ]
+        },
+        {
+          "required": [
+            "data_inline"
+          ]
+        }
+      ],
+      "title": "Public Rule Set Schema",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "required": [
+        "publisher_id",
+        "name",
+        "description"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "(Required) Human-readable name of the ruleset"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "(Optional) Data kind and domain tags for discoverability (e.g. policy, tariff, program, prosumer, grid, billing)"
+        },
+        "type": {
+          "enum": [
+            "rego",
+            "jsonlogic",
+            "other"
+          ],
+          "type": "string",
+          "description": "(Optional) Format of the ruleset"
+        },
+        "data_url": {
+          "type": "string",
+          "format": "uri",
+          "minLength": 1,
+          "description": "(Conditionally required) URL where the ruleset is hosted. Either data_url or data_inline must be provided."
+        },
+        "data_inline": {
+          "type": "string",
+          "minLength": 1,
+          "description": "(Conditionally required) The ruleset itself, embedded inline as a string (base64-encoded for binary formats, raw text for rego/jsonlogic). Either data_url or data_inline must be provided."
+        },
+        "description": {
+          "type": "string",
+          "description": "(Required) What this ruleset contains and its intended use"
+        },
+        "publisher_id": {
+          "type": "string",
+          "description": "(Required) Identifier of the publishing entity"
+        },
+        "data_url_checksum": {
+          "type": "string",
+          "description": "(Conditionally required if data_url is set) Hash value of the data at data_url"
+        },
+        "data_url_checksum_type": {
+          "enum": [
+            "sha256",
+            "sha384",
+            "sha512",
+            "sha3-256",
+            "sha3-512",
+            "blake2b",
+            "blake3",
+            "other"
+          ],
+          "type": "string",
+          "description": "(Conditionally required if data_url is set) Algorithm used to compute data_url_checksum. Use 'other' together with data_url_checksum_type_other for algorithms not listed here."
+        },
+        "data_url_checksum_type_other": {
+          "type": "string",
+          "description": "(Conditionally required if data_url_checksum_type is 'other') Name of the checksum algorithm (e.g. crc32, xxhash, sha3-224, md5, sha1)"
+        }
+      },
+      "description": "Schema for publishing public rulesets on DeDi. Supports both inline data and external data referenced by URL with integrity verification via checksum."
+    },
+    "state": "live",
+    "updated_at": "2026-08-11T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "rooftop-solar-eligibility",
+      "details": {
+        "publisher_id": "ODC-001",
+        "name": "Rooftop Solar Incentive Eligibility",
+        "description": "Rego policy determining eligibility for the rooftop solar rebate program (sample data).",
+        "tags": [
+          "policy",
+          "energy",
+          "incentive"
+        ],
+        "type": "rego",
+        "data_inline": "package rooftop_solar\n\ndefault eligible = false\n\neligible {\n  input.roof_area_sqm \u003e= 20\n  input.occupancy == \"owner\"\n}\n"
+      }
+    },
+    {
+      "record_name": "tariff-discount-rules",
+      "details": {
+        "publisher_id": "ODC-002",
+        "name": "Tariff Discount JSONLogic Rules",
+        "description": "JSONLogic rules for computing seasonal tariff discounts (sample data).",
+        "tags": [
+          "policy",
+          "tariff",
+          "energy"
+        ],
+        "type": "jsonlogic",
+        "data_url": "https://nirmalnr.github.io/crawler-test/open-data-commons.example/rules/tariff-discount.json",
+        "data_url_checksum": "40e29c6b8668497a915498be38b2ff41f6a572135d58ced6e707be35ee1c1d30",
+        "data_url_checksum_type": "sha256"
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "open-data-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..j-6VhNF01nS2RTkJ2zGdw6KZvIU2yohlWlciIXaI983wSa8UUyi1x4aOFYaocdnt0QxGaJWKWly_bj_4AcmtCQ"
+  }
+}

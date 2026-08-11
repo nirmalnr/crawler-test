@@ -1,0 +1,22 @@
+{
+  "type": "dedi-manifest",
+  "dedi_version": "0.1",
+  "domain": "rsa-key-authority.example",
+  "name": "BAD EXAMPLE: manifest key is not OKP/Ed25519 (test fixture, expect verify.Manifest -> Rejected/publisher_key_invalid)",
+  "keys": [
+    {
+      "kid": "rsa-key-authority-key-1",
+      "kty": "RSA",
+      "n": "0vx7agoebGcQSuuPiLJXZptN9nndrQmbXEps2aiAFbWhM78LhWx4cbbfAAtVT86zwu1RK7aPFFxuhDR1L6tSoc_BJECPebWKRXjBZCiFV4n3oknjhMstn64tZ_2W-5JsGY4Hc5n9yBXArwl93lqt7_RN5w6Cf0h4QyQ5v-65YGjQR0_FDW2QvzqY368QQMicAtaSqzs8KJZgnYb9c7d0zqCTQfvvxKe5-fEqxHW2QmSKZmwXW3xNVMjKsCQwqUqYlyaU_UwAxCZR3ZY9M9wcJZHm9CctB4T9WFzt3M-CY7QVDgKgKPvCoiCA5G_pXP8lHNCg8yl-9F0G4XyRP4bYUwIDAQAB",
+      "e": "AQAB"
+    }
+  ],
+  "updated_at": "2026-08-11T00:00:00Z",
+  "next_update": "2031-08-11T00:00:00Z",
+  "files": [],
+  "proof": {
+    "verification_method": "rsa-key-authority-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..LEhojF0lMazUH3e5GZ9TK0bNG-cZnuxCHJT-6FM0HoAH4EjrHwgc5AmoDRpff7rTbr8ouiAgsLZuPNBvZiy9BQ"
+  }
+}

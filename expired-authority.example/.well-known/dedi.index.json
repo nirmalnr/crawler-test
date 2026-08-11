@@ -1,0 +1,22 @@
+{
+  "type": "dedi-manifest",
+  "dedi_version": "0.1",
+  "domain": "expired-authority.example",
+  "name": "BAD EXAMPLE: manifest expired (test fixture, expect verify.Manifest -\u003e Rejected/manifest_expired)",
+  "keys": [
+    {
+      "kid": "expired-authority-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "B45E9N3WUJwon3-c8VTH1vulNXph0arN8t2pudT_qi0"
+    }
+  ],
+  "updated_at": "2025-01-01T00:00:00Z",
+  "next_update": "2025-06-01T00:00:00Z",
+  "files": [],
+  "proof": {
+    "verification_method": "expired-authority-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..s2cGAmIsDL4FQVvHgj3NNOs__EWm5bclCci2zuL-rF8Ubs5Eh4LEWGKaMDNwI8Xhp2SodQDQx6f3LBWvKg9cBQ"
+  }
+}
