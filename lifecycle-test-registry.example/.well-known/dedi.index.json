@@ -17,12 +17,12 @@
     {
       "registry": "temp-registry",
       "url": "https://nirmalnr.github.io/crawler-test/lifecycle-test-registry.example/dedi/dedi.temp-registry.json",
-      "digest": "sha-256:25c92203d6655b65adf0902c31c7679e96ea1c44b88c659cfd059461913bf3c1"
+      "digest": "sha-256:210875c0ed0623a9c6741bf1ffb1416cbb057a5581fe4689171363e893066b52"
     }
   ],
   "proof": {
     "verification_method": "lifecycle-test-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..Ip4qYvO2pbAyp4YomlOR0AA3t6CJVimZkOzj-K-451Xy-KUp4-1VkKO2miCXmd4p93DtjNSepqV9XVUJPp3BBQ"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..AU2g-__DjXnHQP6yi8DXOV3ZTuoEAdKn6RfeFAp_x1JjBU68kfZtIcosj685buh9GVnyCuq1cRrzDMa0RIyPCw"
   }
 }

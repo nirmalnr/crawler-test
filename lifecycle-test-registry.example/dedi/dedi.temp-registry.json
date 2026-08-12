@@ -35,11 +35,17 @@
       "details": {
         "name": "Present for all three record-level crawls"
       }
+    },
+    {
+      "record_name": "temp-record-2",
+      "details": {
+        "name": "Added in crawl #2, should appear"
+      }
     }
   ],
   "proof": {
     "verification_method": "lifecycle-test-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..AoTzCFOL0tbJUgtDVLEsAoOSWtuZgr_x7JAk911Oq1a0Z3UxH1hYM8e9BvPoYtT8dkicwmgr9tlSgN28O9vsCg"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..d7o6ca7qN1qqibT3GtXCDW-M0NzwmF4HU0Xnil0TB-OqbzCXCkHpYAbG33pzKrb-xqhMkF9nuDdofaO-kHcVCw"
   }
 }
