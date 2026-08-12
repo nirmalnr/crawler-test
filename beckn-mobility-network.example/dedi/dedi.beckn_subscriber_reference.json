@@ -43,11 +43,19 @@
         "url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber.json",
         "type": "Record"
       }
+    },
+    {
+      "record_name": "riverside-transit-partner-ref",
+      "details": {
+        "subscriber_id": "riverside-transit-partner.example",
+        "url": "https://api.dedi.global/dedi/lookup/riverside-transit-partner.example/beckn_subscriber",
+        "type": "Registry"
+      }
     }
   ],
   "proof": {
     "verification_method": "beckn-mobility-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..VZ9sYXTtkls3_ALTdFfgZclisuCYtXjwmofmLsm_WKNDpN7-1elnZ-XDWRP2udfH1SmXLbgH9-N0610CfNFRBg"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..0GwecgRHEtVOl9TRRrzFMHd04M30LnqUWGZMEPKcAf5G3ckhv_T1QvIkKTNsLYQHIzxCQNM9fCKhlXUaaNiBCQ"
   }
 }

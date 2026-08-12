@@ -1,0 +1,28 @@
+{
+  "type": "dedi-manifest",
+  "dedi_version": "0.1",
+  "domain": "riverside-transit-partner.example",
+  "name": "Dummy Riverside Transit Partner (test fixture: deliberately NOT in domains.txt, to test reference-based discovery)",
+  "keys": [
+    {
+      "kid": "riverside-transit-partner-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "UKKzNmpsQDwDD1DVD05Nnhs9DpyRjpVpq-Re96rv7FQ"
+    }
+  ],
+  "updated_at": "2026-08-12T00:00:00Z",
+  "next_update": "2031-08-11T00:00:00Z",
+  "files": [
+    {
+      "registry": "beckn_subscriber",
+      "url": "https://nirmalnr.github.io/crawler-test/riverside-transit-partner.example/dedi/dedi.beckn_subscriber.json",
+      "digest": "sha-256:572da0dc3f4a61d8f63b4a145ac6d52d01052bfab0e1bd0383f0c1729447592a"
+    }
+  ],
+  "proof": {
+    "verification_method": "riverside-transit-partner-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..quFBerUVlgFZZL12OE2Xrbkb-CDGYPFwvb3vDDpKo9NO2M08RxJxHJ0Mnm9s1ncVUtSw0wBJz-uBBZ5-gHfQAg"
+  }
+}

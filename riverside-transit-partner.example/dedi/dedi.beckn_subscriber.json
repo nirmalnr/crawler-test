@@ -1,0 +1,41 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/riverside-transit-partner.example/dedi/dedi.beckn_subscriber.json",
+  "next_update": "2031-08-11T00:00:00Z",
+  "publisher": {
+    "domain": "riverside-transit-partner.example",
+    "key": {
+      "kid": "riverside-transit-partner-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "UKKzNmpsQDwDD1DVD05Nnhs9DpyRjpVpq-Re96rv7FQ"
+    }
+  },
+  "namespace": "riverside-transit-partner.example",
+  "registry": {
+    "name": "beckn_subscriber",
+    "schema": "https://raw.githubusercontent.com/LF-Decentralized-Trust-labs/decentralized-directory-protocol/main/schemas/beckn_subscriber.json",
+    "state": "live",
+    "updated_at": "2026-08-12T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "riverside-transit-partner-bap",
+      "details": {
+        "subscriber_id": "riverside-transit-partner.example",
+        "url": "https://api.riverside-transit-partner.example/beckn/bap",
+        "type": "BAP",
+        "countries": [
+          "IND"
+        ],
+        "signing_public_key": "MCowBQYDK2VwAyEAr1V3rS1dEp4rTn2mQ8yL6cJ0uW9bK3xH5aF7dP2sZ4v"
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "riverside-transit-partner-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..EmEjWWVGOURQLsSMvCha2dM5-5XcaNVQ4EawEwwSYfAR2e5yXDia4laPwOA-_O2qJ--wX1OVL_EW14WUZIljAg"
+  }
+}
