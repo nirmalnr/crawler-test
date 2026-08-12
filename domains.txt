@@ -5,6 +5,7 @@ nirmalnr.github.io/crawler-test/keychain-authority.example
 nirmalnr.github.io/crawler-test/open-data-commons.example
 nirmalnr.github.io/crawler-test/mixed-results-registry.example
 nirmalnr.github.io/crawler-test/custom-schema-registry.example
+nirmalnr.github.io/crawler-test/lifecycle-test-registry.example
 nirmalnr.github.io/crawler-test/expired-authority.example
 nirmalnr.github.io/crawler-test/malformed-manifest.example
 nirmalnr.github.io/crawler-test/tampered-manifest.example

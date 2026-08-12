@@ -1,0 +1,45 @@
+{
+  "dedi_version": "0.1",
+  "type": "dedi-file",
+  "source_url": "https://nirmalnr.github.io/crawler-test/lifecycle-test-registry.example/dedi/dedi.temp-registry.json",
+  "next_update": "2031-08-11T00:00:00Z",
+  "publisher": {
+    "domain": "lifecycle-test-registry.example",
+    "key": {
+      "kid": "lifecycle-test-key-1",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "gVLFBTQAwUMbadNgluEhUDTsu38XYQR7dRzomQUmSH8"
+    }
+  },
+  "namespace": "lifecycle-test-registry.example",
+  "registry": {
+    "name": "temp-registry",
+    "schema": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "state": "live",
+    "updated_at": "2026-08-12T00:00:00Z"
+  },
+  "records": [
+    {
+      "record_name": "temp-record-1",
+      "details": {
+        "name": "Should exist after crawl #1, gone after crawl #2"
+      }
+    }
+  ],
+  "proof": {
+    "verification_method": "lifecycle-test-key-1",
+    "canonicalization": "JCS",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..LfONhj7SsZuWZTZka6GOEelUUXWf1FxiVJflO6LUkq9W67dY0zkQdrDeTAgPqQjML9BAWDbGyLE4nd4bmdm1CQ"
+  }
+}
