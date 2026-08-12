@@ -27,19 +27,19 @@
       }
     },
     "state": "live",
-    "updated_at": "2026-08-12T00:00:00Z"
+    "updated_at": "2026-08-12T01:00:00Z"
   },
   "records": [
     {
       "record_name": "temp-record-1",
       "details": {
-        "name": "Should exist after crawl #1, gone after crawl #2"
+        "name": "Present for all three record-level crawls"
       }
     }
   ],
   "proof": {
     "verification_method": "lifecycle-test-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..LfONhj7SsZuWZTZka6GOEelUUXWf1FxiVJflO6LUkq9W67dY0zkQdrDeTAgPqQjML9BAWDbGyLE4nd4bmdm1CQ"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..AoTzCFOL0tbJUgtDVLEsAoOSWtuZgr_x7JAk911Oq1a0Z3UxH1hYM8e9BvPoYtT8dkicwmgr9tlSgN28O9vsCg"
   }
 }
