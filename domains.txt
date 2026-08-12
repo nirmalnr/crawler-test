@@ -12,3 +12,11 @@ nirmalnr.github.io/crawler-test/tampered-manifest.example
 nirmalnr.github.io/crawler-test/unknown-signer.example
 nirmalnr.github.io/crawler-test/rsa-key-authority.example
 nirmalnr.github.io/crawler-test/bad-registry-examples.example
+
+# --- Real domains (not GitHub Pages paths), for testing reference-based
+# discovery against genuinely fetchable, DNS-resolvable hosts. nfo.openvc.global
+# references np1.openvc.global (lookup-URL shape) and np2.openvc.global
+# (domain/dedi/registry shape) in its beckn_subscriber_reference registry —
+# np1/np2 aren't listed here on purpose, since discovering them via that
+# reference is exactly what's being tested.
+nfo.openvc.global
