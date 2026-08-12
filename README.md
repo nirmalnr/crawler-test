@@ -97,6 +97,23 @@ This replaces an earlier, incorrect fixture (`dedi.schema-url-unresolved.json`, 
 `bad-registry-examples.example`) that reused one of the *canonical* schema URLs and so — once
 actually crawled — verified and ingested just fine instead of demonstrating a failure.
 
+## Registry removal (lifecycle test)
+
+`lifecycle-test-registry.example` tests deletion, not just creation: `internal/reconcile.SyncDomain`
+diffs each crawl's verified registries against DeDi.global's current list (`liveByName`) and deletes
+whatever's no longer in the manifest, rather than leaving it orphaned forever. Confirmed as an actual
+two-crawl sequence, not just read from source:
+
+1. Manifest listed one registry, `temp-registry` (record: `temp-record-1`). Crawled — namespace,
+   registry, and record all resolved via the lookup API (`record_count: 1`).
+2. `temp-registry` removed from `files[]`, manifest re-signed, re-crawled. `temp-registry` and its
+   record both now `404`; the namespace itself still resolves (`registry_count: 0`) — removing a
+   registry doesn't delete its namespace, just that one registry.
+
+The bad-registry-examples fixture history above hit this same path incidentally
+(`dedi.schema-url-unresolved.json`'s replacement caused its old registry to get cleaned up the same
+way) — this fixture isolates it as a deliberate, minimal, repeatable case.
+
 ## Bad examples
 
 Everything below is intentionally broken. Each is built by taking a validly-signed document and
