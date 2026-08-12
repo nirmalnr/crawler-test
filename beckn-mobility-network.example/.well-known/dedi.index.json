@@ -17,7 +17,7 @@
     {
       "registry": "beckn_subscriber",
       "url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber.json",
-      "digest": "sha-256:665d58269c22724bc366149ce24fd55d554bb5bcfcbb0aca60e82ad516cba3a8"
+      "digest": "sha-256:95113d5e63cc6b5f9230b0889a3155fc23df90d898a1e79383274c3a2f6696ef"
     },
     {
       "registry": "beckn_subscriber_reference",
@@ -28,6 +28,6 @@
   "proof": {
     "verification_method": "beckn-mobility-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..U7cLFeV-GSKn8v714aCs7SNESWnKIYnkw8VFr5TJxSIk3uX8CWssFYgG7u5x1RqAIqsl4XHOmi-R7p7LPnKuDQ"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..aFAydAgqCVE_Q_pfmvBI4_Q6rRxKcszUbO1ekatN_eEkvu8jKZSGhOIVyyGU3HpsgcQC4HK6uoGagPXZ3mADDw"
   }
 }

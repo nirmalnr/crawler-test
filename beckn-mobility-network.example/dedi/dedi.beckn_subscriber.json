@@ -30,7 +30,8 @@
           "IND"
         ],
         "signing_public_key": "MCowBQYDK2VwAyEAe1F3k9pQxN0lZC7yq2m8T4vR6bU0wA2sK5hD3jN8pXo",
-        "encr_public_key": "MCowBQYDK2VuAyEAr8D2fJ0kM1nQvB9xL3tS6yH4wE7uP0aZ5cV2jR9mFdI"
+        "encr_public_key": "MCowBQYDK2VuAyEAr8D2fJ0kM1nQvB9xL3tS6yH4wE7uP0aZ5cV2jR9mFdI",
+        "domain": "mobility"
       }
     },
     {
@@ -43,7 +44,8 @@
           "IND",
           "USA"
         ],
-        "signing_public_key": "MCowBQYDK2VwAyEAk3L8mN2pQxV5cB1yT7rH0oW9fD4uJ6aG2sE8nX3vYtQ"
+        "signing_public_key": "MCowBQYDK2VwAyEAk3L8mN2pQxV5cB1yT7rH0oW9fD4uJ6aG2sE8nX3vYtQ",
+        "domain": "mobility"
       }
     },
     {
@@ -55,13 +57,14 @@
         "countries": [
           "USA"
         ],
-        "signing_public_key": "MCowBQYDK2VwAyEAf2N9oR4qTzW6dC2yU8sJ1pX5eK7gH0aB3nM9jV2wYtE"
+        "signing_public_key": "MCowBQYDK2VwAyEAf2N9oR4qTzW6dC2yU8sJ1pX5eK7gH0aB3nM9jV2wYtE",
+        "domain": "mobility"
       }
     }
   ],
   "proof": {
     "verification_method": "beckn-mobility-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..Z_QhlrAHScc5heB4YGLxo8gmbN9kB1A4tBdq4IeNh1g8VRn6TDP5X3ygikwu_Orvz83-nANoK-9r32J-oY4SBQ"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..uu2Fs7ApsMc9vjW186jJ-5GN4LqY6fwUQrq7qt_IS2rLUml6nid-e4JP-YXUl9cO3aJmHNSZ5tjxRvW3-Y8GCg"
   }
 }
