@@ -11,18 +11,12 @@
       "x": "gVLFBTQAwUMbadNgluEhUDTsu38XYQR7dRzomQUmSH8"
     }
   ],
-  "updated_at": "2026-08-12T00:00:00Z",
+  "updated_at": "2026-08-12T00:05:00Z",
   "next_update": "2031-08-11T00:00:00Z",
-  "files": [
-    {
-      "registry": "temp-registry",
-      "url": "https://nirmalnr.github.io/crawler-test/lifecycle-test-registry.example/dedi/dedi.temp-registry.json",
-      "digest": "sha-256:c4dce3671f1bba3adc1feaf3297201cc161a7f8a59b91f5787dda86d4e070843"
-    }
-  ],
+  "files": [],
   "proof": {
     "verification_method": "lifecycle-test-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..5bcOVPbS1K6TvguUPhxAnWa8Wr4l9htZZvUshADVypixxFiUB2XRg8Osevwe8MiTRGXgSAUdGiMokgCwm2NZAw"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..k3Ecb9Ncy6r3QIWz_qwKgBLtoBURh6D4PWNHlahsYYaxtoqTsG4PlRECbhkNoY7K9LGtnZDBgUqEJ2PTSyJOBw"
   }
 }
