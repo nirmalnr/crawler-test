@@ -114,6 +114,21 @@ The bad-registry-examples fixture history above hit this same path incidentally
 (`dedi.schema-url-unresolved.json`'s replacement caused its old registry to get cleaned up the same
 way) — this fixture isolates it as a deliberate, minimal, repeatable case.
 
+### Record removal (same domain, three crawls)
+
+The same domain then tested record-level add/remove — `internal/reconcile.syncRecords` diffs a
+registry's desired records against its live ones on every crawl (a registry's file digest changing
+is what makes this run at all; an unchanged digest short-circuits `syncRegistry` before records are
+even looked at). Continuing from the state above:
+
+1. `temp-registry` restored with one record, `temp-record-1`. Crawled — present (`200`).
+   `temp-record-2` didn't exist yet (`404`), confirmed as this test's baseline.
+2. `temp-record-2` added to the same file (new file digest), re-signed, re-crawled.
+   `temp-record-2` now `200` (`record_count: 2`); `temp-record-1` unaffected.
+3. `temp-record-2` removed again (back to just `temp-record-1`), re-signed, re-crawled.
+   `temp-record-2` now `404` again (`record_count: 1`); `temp-record-1` still `200` throughout —
+   confirming only the removed record was touched, not the whole registry.
+
 ## Bad examples
 
 Everything below is intentionally broken. Each is built by taking a validly-signed document and
