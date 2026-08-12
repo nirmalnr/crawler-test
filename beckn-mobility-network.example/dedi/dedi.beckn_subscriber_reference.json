@@ -24,7 +24,7 @@
       "record_name": "dummy-transit-bap-ref",
       "details": {
         "subscriber_id": "bap.beckn-mobility-network.example",
-        "url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber.json",
+        "url": "https://api.dedi.global/dedi/lookup/beckn-mobility-network.example/beckn_subscriber/dummy-transit-bap",
         "type": "Record"
       }
     },
@@ -32,14 +32,22 @@
       "record_name": "dummy-rideshare-bpp-ref",
       "details": {
         "subscriber_id": "bpp.beckn-mobility-network.example",
-        "url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber.json",
+        "url": "https://beckn-mobility-network.example/dedi/beckn_subscriber",
         "type": "Registry"
+      }
+    },
+    {
+      "record_name": "legacy-raw-file-ref",
+      "details": {
+        "subscriber_id": "bap.beckn-mobility-network.example",
+        "url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber.json",
+        "type": "Record"
       }
     }
   ],
   "proof": {
     "verification_method": "beckn-mobility-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..JWWNkdTdM8qz3XtOsQ-4vAfjGMJkbfp5JiAhwkWZrah6vpkhcZqst4i2Pdxok2EuoKKX7GyIWTgbCBN1sGUODw"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..VZ9sYXTtkls3_ALTdFfgZclisuCYtXjwmofmLsm_WKNDpN7-1elnZ-XDWRP2udfH1SmXLbgH9-N0610CfNFRBg"
   }
 }

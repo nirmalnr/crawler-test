@@ -22,12 +22,12 @@
     {
       "registry": "beckn_subscriber_reference",
       "url": "https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber_reference.json",
-      "digest": "sha-256:fe048eec2d949b35da9bf1593c12ae3433929654ca22e8fb8d38cff4359ea640"
+      "digest": "sha-256:d2513b12dcc27ca800d3ffac698212bc39104e7981de9f6746e4a3b156ef9d5f"
     }
   ],
   "proof": {
     "verification_method": "beckn-mobility-key-1",
     "canonicalization": "JCS",
-    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..AUiilNyiMnhN-j5OPTSwfT2115PHMvZiowcK0y-30bYisyMXCuDCKFo-iGmoOTJU87_4AUZ1EtNoJxbElJYFCw"
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..dDVv-ml8kr_UrQq8g_oLDtnYdrrV5bcQ9GDYqIrmOo_D0529ML_-nu-SwEVEiof1PTZIT_rkoXmfisltgutjDw"
   }
 }

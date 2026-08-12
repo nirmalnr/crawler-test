@@ -32,7 +32,7 @@ matching the URL-reference style shown in
 
 | Domain (path in `domains.txt`) | Manifest `domain` | Registries | What's in it |
 |---|---|---|---|
-| `beckn-mobility-network.example` | `beckn-mobility-network.example` | `beckn_subscriber`, `beckn_subscriber_reference` | 3 subscriber records (a BAP and a BPP whose `subscriber_id` is a subdomain of the manifest's domain, plus one rogue record that isn't — see below) + 2 reference records pointing back at the two conformant ones |
+| `beckn-mobility-network.example` | `beckn-mobility-network.example` | `beckn_subscriber`, `beckn_subscriber_reference` | 3 subscriber records (a BAP and a BPP whose `subscriber_id` is a subdomain of the manifest's domain, plus one rogue record that isn't — see below) + 3 reference records pointing back at them, in 3 different URL shapes — see below |
 | `civic-trust-registry.example` | `civic-trust-registry.example` | `membership`, `revoke` | 2 membership records + 2 revoked-membership records |
 | `keychain-authority.example` | `keychain-authority.example` | `public_key` | 2 entity public-key records, one with a `previousKeys` rotation history |
 | `open-data-commons.example` | `open-data-commons.example` | `public-data-set`, `public-rule-set` | 2 datasets (one `data_inline`, one `data_url`+checksum) + 2 rulesets (one `data_inline` rego, one `data_url`+checksum jsonlogic) |
@@ -68,6 +68,24 @@ confirms `rogue-imposter-cds` is filtered out downstream anyway: `beckn_subscrib
 `record_count` comes back `2`, not `3`. Whatever's enforcing this — evidently something in
 DeDi.global itself, past the point where `dedi-crawler` submits the record — it's real, just not
 visible from reading `dedi-crawler`'s own source.
+
+### `beckn_subscriber_reference`: what should `url` actually point to?
+
+A reference record's `url` is meant to be a *DeDi lookup URL* — something a resolver plugs into a
+query — not a direct link to the raw signed file the registry happens to be published as.
+`dedi.beckn_subscriber_reference.json` shows three shapes:
+
+| `record_name` | `url` | Shape |
+|---|---|---|
+| `dummy-transit-bap-ref` | `https://api.dedi.global/dedi/lookup/beckn-mobility-network.example/beckn_subscriber/dummy-transit-bap` | Production DeDi.global lookup API: `api.dedi.global/dedi/lookup/<domain>/<registry>[/<record>]` — the same shape this repo's own lookup queries use (`/dedi/lookup/...` against the local DeDi.global instance) |
+| `dummy-rideshare-bpp-ref` | `https://beckn-mobility-network.example/dedi/beckn_subscriber` | Domain-relative lookup path: `<domain>/dedi/<registry-name>` — no `dedi.` filename prefix, no `.json` suffix, unlike the manifest's own `files[].url` convention |
+| `legacy-raw-file-ref` | `https://nirmalnr.github.io/crawler-test/beckn-mobility-network.example/dedi/dedi.beckn_subscriber.json` | **Doesn't conform to either** — a direct link to the raw signed DeDi file (this repo's *old* behavior for every reference record, before this fixture existed) |
+
+The upstream `beckn_subscriber_reference` schema only requires `url` to be `"format": "uri"` — any
+syntactically valid URI satisfies it, lookup-shaped or not. All three records verify and ingest
+identically; nothing in `dedi-crawler` or (as far as this repo's testing has found) DeDi.global
+itself currently checks a reference URL's shape against either lookup convention. `legacy-raw-file-ref`
+exists to make that gap visible, the same way `rogue-imposter-cds` does for `subscriber_id`.
 
 ## Mixed example
 
