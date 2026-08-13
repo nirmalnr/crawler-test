@@ -13,3 +13,4 @@ nirmalnr.github.io/crawler-test/unknown-signer.example
 nirmalnr.github.io/crawler-test/rsa-key-authority.example
 nirmalnr.github.io/crawler-test/bad-registry-examples.example
 nfo.openvc.global
+https://nirmalnr.github.io/crawler-test/discovery-lists/list-a.txt
